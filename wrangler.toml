@@ -1,0 +1,33 @@
+name = "exodus-keys"
+main = "worker_v1.js"
+compatibility_date = "2025-06-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "exodus-keys"
+database_id = "PASTE_DATABASE_ID_HERE"
+
+[observability]
+enabled = true
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[[routes]]
+pattern = "buyexodus.co.uk"
+custom_domain = true
+
+[vars]
+SITE_URL = "https://buyexodus.co.uk"
+WORKINK_START_URL = "https://work.ink/35Sl/key-system"
+WORKINK_LINK_ID = ""
+WORKINK_IP_CHECK = "1"
+TURNSTILE_SITE_KEY = "0x4AAAAAAFhKFwrs13MiatSy"
+KEY_HOURS = "24"
+MIN_CHECKPOINT_SECONDS = "15"
+HWID_RESET_COOLDOWN = "86400"
